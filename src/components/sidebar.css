@@ -1,0 +1,42 @@
+.sidebar_main {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+
+    background: #fc8a5e;
+    background: -webkit-linear-gradient(top, #fd8a6a, #f867a3);
+    background: -moz-linear-gradient(top, #fd8a6a, #f867a3);
+    background: linear-gradient(to bottom, #fd8a6a 0%, #f867a3 100%);
+}
+
+.sidebar__main_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 78px;
+    ;
+}
+
+.sidebar__main_icon img {
+    width: 36px;
+    height: 36px;
+}
+
+.sidebar__icon {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sidebar__icon img {
+    width: 24px;
+    height: 24px;
+}
