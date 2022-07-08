@@ -1,6 +1,6 @@
 import ContactAvatar from './ContactAvatar';
 import { TrashIcon } from '@heroicons/react/outline';
-
+import { useState } from 'react';
 
 const ContactRow = ({
   contact,
@@ -8,16 +8,19 @@ const ContactRow = ({
   checkedContactIdList,
   setCheckedContactIDList,
   handleShow,
-  setIsMultiDelete,
+  // setIsMultiDelete,
   setDeleteContactId,
 }) => {
+  const [ clicked, setClicked] = useState(false)
+  
   return (
-    <tr key={contact.id}>
-      <td className='align-middle text-center'>
+    <tr key={contact.id}className='one'onClick={() => {setClicked(previousState => !previousState)}}>
+      <td className='align-middle text-center' >
         <input
           title='Select Contact'
           type='checkbox'
-          checked={checkedContactIdList.includes(contact.id)}
+          checked={clicked}
+          value={checkedContactIdList.includes(contact.id)} 
           onChange={() => {
             if (checkedContactIdList.includes(contact.id)) {
               setCheckedContactIDList(
@@ -27,6 +30,7 @@ const ContactRow = ({
               setCheckedContactIDList([...checkedContactIdList, contact.id]);
             }
           }}
+          
         />
       </td>
       <td onClick={() => showActiveUser(contact.id)}>
@@ -63,7 +67,7 @@ const ContactRow = ({
           className='trash-icon'
           onClick={() => {
             handleShow();
-            setIsMultiDelete(false);
+            // setIsMultiDelete(false);
             setDeleteContactId(contact.id);
           }}
         />

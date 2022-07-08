@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { Form, Row, Col, InputGroup, Button } from "react-bootstrap";
 
-
 function ContactModel({
   activeContact,
   isEdit,
@@ -158,7 +157,7 @@ function ContactModel({
                 }
                 required
               >
-                <option disabled value=''>
+                <option disabled value="">
                   Select Role
                 </option>
                 <option value="President">President</option>

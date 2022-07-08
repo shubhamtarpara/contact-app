@@ -1,0 +1,127 @@
+.model__background {
+    background-color: rgb(0 0 0 / 70%);
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1050;
+}
+
+
+.model__main-container {
+    height: 100%;
+    left: 0;
+    outline: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1055;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.model__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 800px;
+    height: 610px;
+    border-radius: 15px;
+
+
+}
+
+.model__title {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 550px;
+    /* justify-content: space-between; */
+    max-width: 95%;
+}
+
+
+.model__title h3 {
+    top: 30px;
+}
+
+.model__title-main {
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #767676;
+
+}
+
+.form__container{
+
+    height: 100%;
+}
+
+
+
+.form__input {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.sub-input {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    width: 50%;
+
+}
+
+.input-address{
+    width: 100%;
+}
+
+.input-address label{
+    margin-bottom: 10px;
+}
+.form__input input[type=text]{
+    width: 100%;
+    height: 38px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+}
+
+.form__input input[type=text]:hover {
+    border: 1px solid #555;
+  }
+.input-address textarea{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.cancel-submit__button {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.cancel-submit__button Button{
+margin: 10px;
+}
+select {
+    width: 361px;
+    height: 38px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+}
+select:hover {
+    border: 1px solid #555;
+}
+.sub-input label{
+    margin-bottom: 10px;
+}
+
+.sub-class{
+    padding-left:19px ;
+}

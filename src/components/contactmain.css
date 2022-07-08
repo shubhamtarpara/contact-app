@@ -9,6 +9,19 @@
     box-shadow: 5px -3px 8px 0;
 }
 
+.main-content-header h3{
+    margin: 0;
+}
+
+.main-content-header p{
+    color: #757575;
+    margin-bottom: 0.65rem;
+}
+.contactbook__main-img-container{
+    margin-left: 60px;
+    align-items: center;
+
+}
 .contactbook{
     height: 35px;
     pointer-events: none;

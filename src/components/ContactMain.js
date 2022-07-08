@@ -5,39 +5,38 @@ import ContactButton from "./ContactButton";
 import ContactInfo from "./ContactInfo";
 import SearchBar from "./SearchBar";
 import ContactTable from "./ContactTable";
-import ContactModel from "./ContactModel";
+import ContactForm from "./ContactForm";
 import DeleteModel from "./DeleteModel";
 
 import contactbook from "../icons/contactbook.png";
-import { Button } from "react-bootstrap";
-import { TrashIcon } from "@heroicons/react/outline";
+// import { Button } from "react-bootstrap";
+// import { TrashIcon } from "@heroicons/react/outline";
 
-import './contactmain.css'
-
+import "./contactmain.css";
 
 const ContactMain = () => {
   const [contacts, setContacts] = useState(
-    localStorage.getItem('contacts')
-      ? JSON.parse(localStorage.getItem('contacts'))
+    localStorage.getItem("contacts")
+      ? JSON.parse(localStorage.getItem("contacts"))
       : [
           {
-            id: '_' + Math.random().toString(36).substr(2, 9),
-            fname: 'Mike',
-            lname: 'Huston',
-            email: 'mikehuston@live.com',
-            phone: '8996652389',
-            company: 'Alibaba Traders .co',
-            Role: 'Chief Operating Officer',
-            address: 'Bay Area, San Francisco, CA',
+            id: "_" + Math.random().toString(36).substr(2, 9),
+            fname: "Miriko",
+            lname: "Hussoe",
+            email: "Miriko@gmail.com",
+            phone: "9998887771",
+            company: "Articea prtivated LMT",
+            Role: "Director",
+            address: "Stree no 1, Lost Angelis, CA",
           },
         ]
   );
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem("contacts", JSON.stringify(contacts));
   }, [contacts]);
 
-  const [filterText, setFilterText] = useState('');
+  const [filterText, setFilterText] = useState("");
 
   const [activeContact, setActiveContact] = useState(null);
 
@@ -115,57 +114,61 @@ const ContactMain = () => {
   };
 
   return (
-    <div className='main-content container-fluid'>
-      <div className='row'>
-        <div className='main-content-top col-xl-12'></div>
+    <div className="main-content container-fluid">
+      <div className="row">
+        <div className="main-content-top col-xl-12"></div>
       </div>
-      <div className='row'>
-        <div className='main-content-bottom container-fluid p-lg-5 p-3'>
-          <div className='row'>
-            <div className='col-xl-12 d-flex'>
-              <img src={contactbook} alt='contactbook' className='contactbook' />
-              <div className='main-content-header'>
+      <div className="row">
+        <div className="main-content-bottom container-fluid p-lg-5 p-3">
+          <div className="row">
+            <div className="col-xl-12 d-flex contactbook__main-img-container">
+              <img
+                src={contactbook}
+                alt="contactbook"
+                className="contactbook"
+              />
+              <div className="main-content-header">
                 <h3>Contacts</h3>
-                <p>Welcome to FlatCRM Contact page</p>
+                <p>Welcome React Contact App</p>
               </div>
             </div>
           </div>
-          <div className='row mb-4 p-lg-5 pb-lg-0 pt-lg-0'>
-            <div className='col-xl-3 col-md-6'>
+          <div className="row mb-4 p-lg-5 pb-lg-0 pt-lg-0">
+            <div className="col-xl-3 col-md-6">
               <SearchBar
                 filterText={filterText}
                 setFilterText={setFilterText}
               />
             </div>
-            <div className='col-xl-2 col-md-3 d-flex'>
+            <div className="col-xl-2 col-md-3 d-flex">
               <ContactButton
-                btnIcon={'plus'}
-                btnText={'Add Contact'}
-                btnType={'add'}
+                btnIcon={"plus"}
+                btnText={"Add Contact"}
+                btnType={"add"}
                 setModalShow={setModalShow}
                 setIsEdit={setIsEdit}
               />
             </div>
-            <div className='col-xl-7 col-md-3 d-flex'>
+            {/* <div className="col-xl-7 col-md-3 d-flex">
               {checkedContactIdList.length > 0 ? (
                 <Button
                   title={`Delete ${checkedContactIdList.length} contact(s)`}
-                  className='custom-btn'
+                  className="custom-btn"
                   onClick={() => {
                     handleShow();
                     setIsMultiDelete(true);
                   }}
                 >
-                  <TrashIcon className='custom-btn-icon' />
+                  <TrashIcon className="custom-btn-icon" />
                   Delete
                 </Button>
               ) : (
-                ''
+                ""
               )}
-            </div>
+            </div> */}
           </div>
-          <div className='row p-lg-5 pb-lg-0 pt-lg-0'>
-            <div className='col-lg-7 '>
+          <div className="row p-lg-5 pb-lg-0 pt-lg-0">
+            <div className="col-lg-7 ">
               <ContactTable
                 contacts={contacts}
                 filterText={filterText}
@@ -177,7 +180,7 @@ const ContactMain = () => {
                 setDeleteContactId={setDeleteContactId}
               />
             </div>
-            <div className='col-lg-5'>
+            <div className="col-lg-5">
               {isActive && (
                 <ContactInfo
                   activeContact={activeContact}
@@ -187,12 +190,12 @@ const ContactMain = () => {
               )}
             </div>
             {modalShow && (
-              <ContactModel
+              <ContactForm
                 activeContact={activeContact}
                 isEdit={isEdit}
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-                title={isEdit ? 'Edit Contact' : 'Add Contact'}
+                title={isEdit ? "Edit Contact" : "Add Contact"}
                 addContact={addContact}
                 editContact={editContact}
               />

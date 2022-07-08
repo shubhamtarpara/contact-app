@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.one{
+    display: flex;
+}
+
+
+input[type='checkbox']{
+    width: 40px;
+    height: 25px;
+   
+}
+
+.trash-icon {
+    width: 32px;
+    height: 32px;
+    transition: all ease 0.5s;
+    
+}
+.trash-icon:hover {
+    transform: scale(1.2);
+    color: red;
+
+    
+}

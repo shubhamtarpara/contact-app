@@ -1,7 +1,6 @@
-import { Table } from 'react-bootstrap';
-import ContactRow from './ContactRow';
-import { useState, useEffect } from 'react';
-
+import { Table } from "react-bootstrap";
+import ContactRow from "./ContactRow";
+import { useState, useEffect } from "react";
 
 const ContactTable = ({
   contacts,
@@ -22,7 +21,7 @@ const ContactTable = ({
         contact.lname.toLowerCase().includes(filterText.toLowerCase()) ||
         (
           contact.fname.toLowerCase() +
-          ' ' +
+          " " +
           contact.lname.toLowerCase()
         ).includes(filterText.toLowerCase()) ||
         contact.company.toLowerCase().includes(filterText.toLowerCase()) ||
@@ -34,14 +33,14 @@ const ContactTable = ({
   }, [contacts, filterText]);
 
   return (
-    <div className='main-content-list'>
+    <div className="main-content-list">
       <Table>
         <thead>
           <tr>
-            <th className='text-center col-1'>+</th>
-            <th className='text-secondary col-5'>Basic Info</th>
-            <th className='text-secondary col-5'>Company</th>
-            <th className='text-center p-1 col-1'></th>
+            <th className="text-center col-1">+</th>
+            <th className="text-secondary col-5">Basic Info</th>
+            <th className="text-secondary col-5">Company</th>
+            <th className="text-center p-1 col-1"></th>
           </tr>
         </thead>
         <tbody>
@@ -60,7 +59,7 @@ const ContactTable = ({
             ))
           ) : (
             <tr>
-              <td colSpan='4' className='text-center text-secondary fw-bold'>
+              <td colSpan="4" className="text-center text-secondary fw-bold">
                 No contacts found
               </td>
             </tr>
