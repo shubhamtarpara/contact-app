@@ -125,3 +125,7 @@ select:hover {
 .sub-class{
     padding-left:19px ;
 }
+
+span {
+    color: red;
+}

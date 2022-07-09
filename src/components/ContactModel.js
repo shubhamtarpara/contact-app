@@ -13,8 +13,8 @@ function ContactModel({
 }) {
   const initialContact = {
     id: "_" + Math.random().toString(36).substr(2, 9),
-    fname: "",
-    lname: "",
+    firstname: "",
+    lastName: "",
     email: "",
     phone: "",
     company: "",
@@ -60,15 +60,15 @@ function ContactModel({
       <Modal.Body>
         <Form noValidate validated={validated} onSubmit={formSubmitHandler}>
           <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="validationCustomfname">
+            <Form.Group as={Col} md="6" controlId="validationCustomfirstname">
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"
                 pattern="^\S[A-Za-z\s]{1,32}\S$"
                 placeholder="Enter First Name"
-                value={contact.fname}
+                value={contact.firstname}
                 onChange={(e) =>
-                  setContact({ ...contact, fname: e.target.value })
+                  setContact({ ...contact, firstname: e.target.value })
                 }
                 required
               />
@@ -76,15 +76,15 @@ function ContactModel({
                 Please enter a valid first name.
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="6" controlId="validationCustomlname">
+            <Form.Group as={Col} md="6" controlId="validationCustomlastName">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
                 type="text"
                 pattern="^\S[A-Za-z\s]{1,32}\S$"
                 placeholder="Enter last name"
-                value={contact.lname}
+                value={contact.lastName}
                 onChange={(e) =>
-                  setContact({ ...contact, lname: e.target.value })
+                  setContact({ ...contact, lastName: e.target.value })
                 }
                 required
               />

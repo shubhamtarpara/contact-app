@@ -18,11 +18,11 @@ const ContactTable = ({
     const filteredContacts = contacts.filter(
       (contact) =>
         contact.fname.toLowerCase().includes(filterText.toLowerCase()) ||
-        contact.lname.toLowerCase().includes(filterText.toLowerCase()) ||
+        contact.lastName.toLowerCase().includes(filterText.toLowerCase()) ||
         (
-          contact.fname.toLowerCase() +
+          contact.firstname.toLowerCase() +
           " " +
-          contact.lname.toLowerCase()
+          contact.lastName.toLowerCase()
         ).includes(filterText.toLowerCase()) ||
         contact.company.toLowerCase().includes(filterText.toLowerCase()) ||
         contact.email.toLowerCase().includes(filterText.toLowerCase()) ||

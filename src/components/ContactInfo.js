@@ -6,13 +6,13 @@ import { useState, useEffect } from "react";
 import "./contactinfo.css";
 
 const ContactInfo = (props) => {
-  const { id, fname, lname, email, phone, company, Role, address } =
+  const { id, firstname, lastName, email, phone, company, Role, address } =
     props.activeContact;
 
   const [contact, setContact] = useState({
     id: id,
-    fname: fname,
-    lname: lname,
+    firstname: firstname,
+    lastName: lastName,
     email: email,
     phone: phone,
     company: company,
@@ -23,15 +23,15 @@ const ContactInfo = (props) => {
   useEffect(() => {
     setContact({
       id: id,
-      fname: fname,
-      lname: lname,
+      firstname: firstname,
+      lastName: lastName,
       email: email,
       phone: phone,
       company: company,
       Role: Role,
       address: address,
     });
-  }, [id, fname, lname, email, phone, company, Role, address]);
+  }, [id, firstname, lastName, email, phone, company, Role, address]);
 
   return (
     <div className="main-content-card">
@@ -42,12 +42,12 @@ const ContactInfo = (props) => {
               <div className="card-body">
                 <div className="d-flex flex-column align-items-center text-center">
                   <ContactAvatar
-                    name={contact.fname + " " + contact.lname}
+                    name={contact.firstname + " " + contact.lastName}
                     className={"info-avatar"}
                   />
                   <div className="mt-3 w-100">
-                    <h4 className="m-auto fullname">
-                      {contact.fname + " " + contact.lname}
+                    <h4 className="m-auto fullastName">
+                      {contact.firstname + " " + contact.lastName}
                     </h4>
                     <p className="mb-1 text-secondary">
                       {contact.Role} @ {contact.company}
@@ -59,7 +59,7 @@ const ContactInfo = (props) => {
                     <h6 className=" mb-0 text-secondary">Full Name</h6>
                   </div>
                   <div className="col-8 truncate-string">
-                    {contact.fname} {contact.lname}
+                    {contact.firstname} {contact.lastName}
                   </div>
                 </div>
                 <hr />

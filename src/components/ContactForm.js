@@ -16,7 +16,7 @@ function ContactForm({
   const initialContact = {
     id: "_" + Math.random().toString(36).substr(2, 9),
     fname: "",
-    lname: "",
+    lastName: "",
     email: "",
     phone: "",
     company: "",
@@ -24,10 +24,14 @@ function ContactForm({
     address: "",
   };
   const [contact, setContact] = useState(initialContact);
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [error, setError] = useState(false);
 
+  const [firstname, setfirstname] = useState({ value: "", firstnameError: null });
+  const [firstnameError, setfirstnameError] = useState(false);
+
+  const [lastName, setLastName] = useState({ value: '', lastNameError: null });
+  const [lastNameError, setLastNameError] = useState(false);
+
+  
 
 
   useEffect(() => {
@@ -38,18 +42,13 @@ function ContactForm({
 
   const [validated, setValidated] = useState(false);
 
-  
-const textHandler = (e) =>{
-  setContact({ ...contact, fname: e.target.value })
-}
-
 
   const formSubmitHandler = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
     console.log(formSubmitHandler);
-    if (firstName.length == 0 || lastName.length == 0) {
-      setError(true);
+    if (firstname.firstnameError || lastName.lastNameError) {
+      return;
     }
     if (form.checkValidity() === false) {
       event.stopPropagation();
@@ -61,7 +60,20 @@ const textHandler = (e) =>{
       setValidated(false);
     }
   };
-
+  const validatefirstname = () => {
+    if (!firstname.value.trim()) {
+      setfirstname({ ...firstname, firstnameError: 'Please enter a vaild first name.' })
+    } else {
+      setfirstname({ value: firstname.value, firstnameError: null })
+    }
+  }
+  const validateLastName = () => {
+    if (!lastName.value.trim()) {
+      setLastName({ ...lastName, lastNameError: 'Please enter a vaild last name.' })
+    } else {
+      setLastName({ value: lastName.value, lastNameError: null })
+    }
+  }
   return (
     <div
       className="model__background"
@@ -89,11 +101,11 @@ const textHandler = (e) =>{
                       type="text"
                       // pattern="^\S[A-Za-z\s]{1,32}\S$"
                       placeholder="Enter First Name"
-                      value={contact.fname}
-                      onFocus={e => setFirstName(e.target.value)}
-                      onChange={textHandler}
+                      value={firstname.value}
+                      onBlur={validatefirstname}
+                      onChange={e => setfirstname({ value: e.target.value, firstnameError: null })}
                       required />
-                   {error &&firstName.length<=0 ? <span>Please enter a vaild first name.</span> : ''}
+                    {firstname.firstnameError && <span>{firstname.firstnameError}</span>}
                   </div>
                   <div className="sub-input sub-class">
                     <label htmlFor="First Last">Last Name</label>
@@ -101,14 +113,12 @@ const textHandler = (e) =>{
                       type="text"
                       pattern="^\S[A-Za-z\s]{1,32}\S$"
                       placeholder="Enter Last Name"
-                      value={contact.lname}
-                      onFocus={e => setLastName(e.target.value)}
-                      onChange={(e) =>
-                        setContact({ ...contact, lname: e.target.value })
-                      }
+                      value={lastName.value}
+                      onFocus={validateLastName}
+                      onChange={e => setLastName({ value: e.target.value, lastNameError: null })}
                       required
                     />
-                   {error && lastName.length<=0? <span>Please enter a vaild last name.</span> : ''}
+                    {lastName.lastNameError && <span>{lastName.lastNameError}</span>}
                   </div>
 
                   <div className="sub-input">
