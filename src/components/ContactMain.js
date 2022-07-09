@@ -21,12 +21,12 @@ const ContactMain = () => {
       : [
           {
             id: "_" + Math.random().toString(36).substr(2, 9),
-            firstname: "Miriko",
+            firstName: "Miriko",
             lastName: "Hussoe",
             email: "Miriko@gmail.com",
             phone: "9998887771",
             company: "Articea prtivated LMT",
-            Role: "Director",
+            role: "Director",
             address: "Stree no 1, Lost Angelis, CA",
           },
         ]

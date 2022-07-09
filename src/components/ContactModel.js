@@ -13,12 +13,12 @@ function ContactModel({
 }) {
   const initialContact = {
     id: "_" + Math.random().toString(36).substr(2, 9),
-    firstname: "",
+    firstName: "",
     lastName: "",
     email: "",
     phone: "",
     company: "",
-    Role: "",
+    role: "",
     address: "",
   };
   const [contact, setContact] = useState(initialContact);
@@ -60,15 +60,15 @@ function ContactModel({
       <Modal.Body>
         <Form noValidate validated={validated} onSubmit={formSubmitHandler}>
           <Row className="mb-3">
-            <Form.Group as={Col} md="6" controlId="validationCustomfirstname">
+            <Form.Group as={Col} md="6" controlId="validationCustomfirstName">
               <Form.Label>First Name</Form.Label>
               <Form.Control
                 type="text"
                 pattern="^\S[A-Za-z\s]{1,32}\S$"
                 placeholder="Enter First Name"
-                value={contact.firstname}
+                value={contact.firstName}
                 onChange={(e) =>
-                  setContact({ ...contact, firstname: e.target.value })
+                  setContact({ ...contact, firstName: e.target.value })
                 }
                 required
               />
@@ -148,17 +148,17 @@ function ContactModel({
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="6" controlId="validationCustom05">
-              <Form.Label>Role</Form.Label>
+              <Form.Label>role</Form.Label>
               <Form.Select
                 aria-label="Default select example"
-                value={contact.Role}
+                value={contact.role}
                 onChange={(e) =>
-                  setContact({ ...contact, Role: e.target.value })
+                  setContact({ ...contact, role: e.target.value })
                 }
                 required
               >
                 <option disabled value="">
-                  Select Role
+                  Select role
                 </option>
                 <option value="President">President</option>
               </Form.Select>

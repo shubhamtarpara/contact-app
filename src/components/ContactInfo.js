@@ -6,32 +6,32 @@ import { useState, useEffect } from "react";
 import "./contactinfo.css";
 
 const ContactInfo = (props) => {
-  const { id, firstname, lastName, email, phone, company, Role, address } =
+  const { id, firstName, lastName, email, phone, company, role, address } =
     props.activeContact;
 
   const [contact, setContact] = useState({
     id: id,
-    firstname: firstname,
+    firstName: firstName,
     lastName: lastName,
     email: email,
     phone: phone,
     company: company,
-    Role: Role,
+    role: role,
     address: address,
   });
 
   useEffect(() => {
     setContact({
       id: id,
-      firstname: firstname,
+      firstName: firstName,
       lastName: lastName,
       email: email,
       phone: phone,
       company: company,
-      Role: Role,
+      role: role,
       address: address,
     });
-  }, [id, firstname, lastName, email, phone, company, Role, address]);
+  }, [id, firstName, lastName, email, phone, company, role, address]);
 
   return (
     <div className="main-content-card">
@@ -42,15 +42,15 @@ const ContactInfo = (props) => {
               <div className="card-body">
                 <div className="d-flex flex-column align-items-center text-center">
                   <ContactAvatar
-                    name={contact.firstname + " " + contact.lastName}
+                    name={contact.firstName + " " + contact.lastName}
                     className={"info-avatar"}
                   />
                   <div className="mt-3 w-100">
                     <h4 className="m-auto fullastName">
-                      {contact.firstname + " " + contact.lastName}
+                      {contact.firstName + " " + contact.lastName}
                     </h4>
                     <p className="mb-1 text-secondary">
-                      {contact.Role} @ {contact.company}
+                      {contact.role} @ {contact.company}
                     </p>
                   </div>
                 </div>
@@ -59,7 +59,7 @@ const ContactInfo = (props) => {
                     <h6 className=" mb-0 text-secondary">Full Name</h6>
                   </div>
                   <div className="col-8 truncate-string">
-                    {contact.firstname} {contact.lastName}
+                    {contact.firstName} {contact.lastName}
                   </div>
                 </div>
                 <hr />

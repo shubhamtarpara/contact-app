@@ -37,14 +37,14 @@ const ContactRow = ({
         <div className='contact d-flex'>
           <div className='contact-avatar m-2'>
             <ContactAvatar
-              name={contact.firstname + ' ' + contact.lastName}
+              name={contact.firstName + ' ' + contact.lastName}
               className='list-avatar'
             />
           </div>
           <div className='contact-info d-flex flex-column justify-content-center m-2'>
             <div className='contact-info-name truncate-string'>
               <p className='m-0 truncate-string'>
-                {contact.firstname} {contact.lastName}
+                {contact.firstName} {contact.lastName}
               </p>
             </div>
             <div className='contact-info-email'>

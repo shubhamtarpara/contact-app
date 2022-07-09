@@ -17,17 +17,17 @@ const ContactTable = ({
   useEffect(() => {
     const filteredContacts = contacts.filter(
       (contact) =>
-        contact.fname.toLowerCase().includes(filterText.toLowerCase()) ||
+        contact.firstName.toLowerCase().includes(filterText.toLowerCase()) ||
         contact.lastName.toLowerCase().includes(filterText.toLowerCase()) ||
         (
-          contact.firstname.toLowerCase() +
+          contact.firstName.toLowerCase() +
           " " +
           contact.lastName.toLowerCase()
         ).includes(filterText.toLowerCase()) ||
         contact.company.toLowerCase().includes(filterText.toLowerCase()) ||
         contact.email.toLowerCase().includes(filterText.toLowerCase()) ||
         contact.phone.toLowerCase().includes(filterText.toLowerCase()) ||
-        contact.Role.toLowerCase().includes(filterText.toLowerCase())
+        contact.role.toLowerCase().includes(filterText.toLowerCase())
     );
     setContactList(filteredContacts);
   }, [contacts, filterText]);
