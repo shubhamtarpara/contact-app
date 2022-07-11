@@ -115,8 +115,8 @@ const ContactMain = () => {
 
   return (
     <div className="main-content container-fluid">
-      <div className="row">
-        <div className="main-content-top col-xl-12"></div>
+      <div className="upper__row-main row">
+        <div className=" upper__row main-content-top col-xl-12"></div>
       </div>
       <div className="row">
         <div className="main-content-bottom container-fluid p-lg-5 p-3">
