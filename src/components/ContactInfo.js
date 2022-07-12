@@ -3,7 +3,7 @@ import ContactButton from "./ContactButton";
 import ContactAvatar from "./ContactAvatar";
 import { useState, useEffect } from "react";
 
-import "./contactinfo.css";
+
 
 const ContactInfo = (props) => {
   const { id, firstName, lastName, email, phone, company, role, address } =
@@ -46,7 +46,7 @@ const ContactInfo = (props) => {
                     className={"info-avatar"}
                   />
                   <div className="mt-3 w-100">
-                    <h4 className="m-auto fullastName">
+                    <h4 className="m-auto ">
                       {contact.firstName + " " + contact.lastName}
                     </h4>
                     <p className="mb-1 text-secondary">

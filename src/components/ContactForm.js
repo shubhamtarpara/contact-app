@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import { Modal } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import "./contactform.css";
@@ -113,16 +113,21 @@ function ContactForm({
     setLastName({ value: lastName.value, error: null });
     return true;
   };
+
+
   const validateEmail = () => {
-    if (!email.value.trim()) {
+    const emailregex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!emailregex.test(email.value)) {
       setEmail({ ...email, error: "Please enter a vaild email address." });
       return false;
     }
     setEmail({ value: email.value, error: null });
     return true;
   };
+
   const validatePhone = () => {
-    if (!phone.value.trim()) {
+    const phoneregex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
+    if (!phoneregex.test(phone.value)) {
       setPhone({ ...phone, error: "Please enter a vaild phone number." });
       return false;
     }

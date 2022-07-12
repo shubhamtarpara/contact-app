@@ -7,6 +7,7 @@ import SearchBar from "./SearchBar";
 import ContactTable from "./ContactTable";
 import ContactForm from "./ContactForm";
 import DeleteModel from "./DeleteModel";
+import DeleteContactModel from "./DeleteContactModel";
 
 import contactbook from "../icons/contactbook.png";
 // import { Button } from "react-bootstrap";
@@ -21,8 +22,8 @@ const ContactMain = () => {
       : [
           {
             id: "_" + Math.random().toString(36).substr(2, 9),
-            firstName: "Miriko",
-            lastName: "Hussoe",
+            firstName: "ka",
+            lastName: "Hu",
             email: "Miriko@gmail.com",
             phone: "9998887771",
             company: "Articea prtivated LMT",
@@ -49,13 +50,11 @@ const ContactMain = () => {
   const [checkedContactIdList, setCheckedContactIDList] = useState([]);
 
   const [isMultiDelete, setIsMultiDelete] = useState(false);
-
   const [deleteContactId, setDeleteContactId] = useState(null);
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-
   const handleShow = () => setShow(true);
 
   const handleDelete = () => {
@@ -201,7 +200,7 @@ const ContactMain = () => {
               />
             )}
             {show && (
-              <DeleteModel
+              <DeleteContactModel
                 show={show}
                 handleClose={handleClose}
                 handleDelete={handleDelete}

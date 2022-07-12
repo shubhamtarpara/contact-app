@@ -1,7 +1,7 @@
 import ContactAvatar from "./ContactAvatar";
 import { TrashIcon } from "@heroicons/react/outline";
 import { useState } from "react";
-import './contactrow.css'
+import "./contactrow.css";
 
 const ContactRow = ({
   contact,

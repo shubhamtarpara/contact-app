@@ -2,8 +2,10 @@ import React from "react";
 import "./searchbar.css";
 
 import { SearchIcon } from "@heroicons/react/outline";
-const SearchBar = () => {
-  const SearchInputHandler = () => {};
+const SearchBar = ({filterText, setFilterText}) => {
+  const SearchInputHandler = (e) => {
+    setFilterText(e.target.value)
+  };
   return (
     <div className="main-content-search">
       <div className="search-btn ">

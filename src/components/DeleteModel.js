@@ -1,5 +1,6 @@
 import { Button, ModalTitle } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
+
 const DeleteModel = ({ show, handleClose, handleDelete }) => {
   return (
     <>
